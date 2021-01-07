@@ -7,7 +7,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import {
   DxDrawerModule,
   DxListModule,
-  DxRadioGroupModule,
   DxToolbarModule
 } from 'devextreme-angular';
 
@@ -17,12 +16,11 @@ import {
     SidenavComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     DxToolbarModule,
     DxDrawerModule,
-    DxListModule,
-    DxRadioGroupModule
+    DxListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

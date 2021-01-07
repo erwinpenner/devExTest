@@ -22,11 +22,10 @@ export class List {
 
 
 // bsm demo data
-const navigation: List[] = [
-  { id: 1, text: 'Kunden', icon: 'user' },
-  { id: 2, text: 'Kundenstamm', icon: undefined},
-  { id: 3, text: 'Lieferanten', icon: 'car' },
-  { id: 4, text: 'Kontakte', icon: 'card' },
+const navigation: any[] = [
+  { id: 1, text: 'Kunden', icon: 'user', path: 'kundenstamm'},
+  { id: 3, text: 'Lieferanten', icon: 'car', path: 'lieferantenstamm' },
+  { id: 4, text: 'Kontakte', icon: 'card', path: 'kontakte' },
 ];
 
 // bsm demo content
