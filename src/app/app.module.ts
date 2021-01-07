@@ -3,14 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {
+  DxDrawerModule,
+  DxListModule,
+  DxRadioGroupModule,
+  DxToolbarModule
+} from 'devextreme-angular';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DxToolbarModule,
+    DxDrawerModule,
+    DxListModule,
+    DxRadioGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
