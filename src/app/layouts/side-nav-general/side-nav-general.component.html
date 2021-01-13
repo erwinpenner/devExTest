@@ -1,5 +1,6 @@
 <dx-drawer
   class="drawer"
+  id="drawer2"
   position="before"
   [closeOnOutsideClick]="shaderEnabled"
   [openedStateMode]="menuMode"
@@ -9,7 +10,7 @@
   [(opened)]="menuOpened">
 
   <app-side-navigation-menu
-    id="inner-app-side-nav-menu"
+    id="app-side-nav-menu2"
     [compactMode]="!menuOpened"
     [selectedItem]="selectedRoute"
     [menuNavItems]="innerNav"
@@ -17,7 +18,7 @@
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
     (openMenu)="navigationClick()">
-    <dx-toolbar id="general-navigation-header">
+    <dx-toolbar id="navigation-header2">
       <dxi-item
         *ngIf="minMenuSize !== 0"
         location="before"

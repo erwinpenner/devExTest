@@ -22,7 +22,7 @@ export class SideNavGeneralComponent implements OnInit {
   temporaryMenuOpened = false;
 
   @Input()
-  title: string | undefined;
+  title: string;
 
   currentApp = 'CRM';
   menuMode = 'shrink';
