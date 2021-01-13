@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-lieferantenstamm',
   // template: '<div>Lieferantenstamm</div>',
   templateUrl: './lieferantenstamm.component.html',
-  styleUrls: ['./lieferantenstamm.component.css']
+  styleUrls: ['./lieferantenstamm.component.scss']
 })
 export class LieferantenstammComponent {
 

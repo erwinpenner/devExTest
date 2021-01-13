@@ -1,28 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import {
-  DxDrawerModule,
-  DxListModule,
-  DxToolbarModule
-} from 'devextreme-angular';
+  SideNavOuterToolbarModule,
+  SideNavInnerToolbarModule,
+  SingleCardModule,
+  SideNavGeneralComponent,
+  SideNavGeneralModule
+} from './layouts';
+import { FooterModule, LoginFormModule } from './shared/components';
+import { AuthService, ScreenService, AppInfoService } from './shared/services';
+import { UnauthenticatedContentModule } from './unauthenticated-content';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidenavComponent
+    AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    DxToolbarModule,
-    DxDrawerModule,
-    DxListModule
+    SideNavOuterToolbarModule,
+    SideNavInnerToolbarModule,
+    SingleCardModule,
+    SideNavGeneralModule,
+    FooterModule,
+    LoginFormModule,
+    UnauthenticatedContentModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

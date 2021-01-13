@@ -1,5 +1,5 @@
 {
-  "name": "bsm2020fe",
+  "name": "dev-ex-test",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,18 +7,21 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-themes": "devextreme build",
+    "postinstall": "npm run build-themes"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~11.0.5",
-    "@angular/common": "~11.0.5",
-    "@angular/compiler": "~11.0.5",
-    "@angular/core": "~11.0.5",
-    "@angular/forms": "~11.0.5",
-    "@angular/platform-browser": "~11.0.5",
-    "@angular/platform-browser-dynamic": "~11.0.5",
-    "@angular/router": "~11.0.5",
+    "@angular/animations": "^11.0.8",
+    "@angular/cdk": "^8.0.0",
+    "@angular/common": "^11.0.8",
+    "@angular/compiler": "^11.0.8",
+    "@angular/core": "^11.0.8",
+    "@angular/forms": "^11.0.8",
+    "@angular/platform-browser": "^11.0.8",
+    "@angular/platform-browser-dynamic": "^11.0.8",
+    "@angular/router": "^11.0.8",
     "devextreme": "^20.2.4",
     "devextreme-angular": "^20.2.4",
     "devextreme-schematics": "^1.2.7",
@@ -27,11 +30,11 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1100.5",
-    "@angular/cli": "~11.0.5",
-    "@angular/compiler-cli": "~11.0.5",
+    "@angular-devkit/build-angular": "^0.1100.6",
+    "@angular/cli": "^11.0.6",
+    "@angular/compiler-cli": "^11.0.8",
     "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.19.13",
     "codelyzer": "^6.0.0",
     "devextreme-cli": "latest",
     "devextreme-themebuilder": "^20.2.4",

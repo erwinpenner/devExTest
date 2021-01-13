@@ -9,13 +9,13 @@ if (!/localhost/.test(document.location.host)) {
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'],
+  styleUrls: ['./sidenav.component.scss'],
   preserveWhitespaces: true
 })
 export class SidenavComponent implements OnInit {
 
   @ViewChild(DxDrawerComponent, {static: false}) drawer: DxDrawerComponent | undefined;
-  navigation: List[];
+  navigation: object;
   text: string;
   isDrawerOpen = true;
   elementAttr: any;

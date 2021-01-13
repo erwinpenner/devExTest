@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-kundenstamm',
   // template: '<div>Kundenstamm</div>',
   templateUrl: './kundenstamm.component.html',
-  styleUrls: ['./kundenstamm.component.css']
+  styleUrls: ['./kundenstamm.component.scss']
 })
 export class KundenstammComponent {
 
