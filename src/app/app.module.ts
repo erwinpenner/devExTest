@@ -4,9 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {
   SideNavOuterToolbarModule,
-  SideNavInnerToolbarModule,
   SingleCardModule,
-  SideNavGeneralComponent,
   SideNavGeneralModule
 } from './layouts';
 import { FooterModule, LoginFormModule } from './shared/components';
@@ -21,7 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     SideNavOuterToolbarModule,
-    SideNavInnerToolbarModule,
     SingleCardModule,
     SideNavGeneralModule,
     FooterModule,

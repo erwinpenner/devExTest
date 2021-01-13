@@ -6,7 +6,7 @@
   [revealMode]="menuRevealMode"
   [minSize]="minMenuSize"
   [shading]="shaderEnabled"
-  [(opened)]="menuOpened">
+  [opened]="menuOpened">
 
   <app-side-navigation-menu
     id="inner-app-side-nav-menu"
@@ -16,10 +16,11 @@
     class="dx-swatch-additional"
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
-    (openMenu)="navigationClick()">
+    (openMenu)="navigationClick()"
+    [style.width]="'auto !important'"
+    [style.maxWidth]="'250px'">
     <dx-toolbar id="general-navigation-header">
-      <dxi-item
-        *ngIf="minMenuSize !== 0"
+      <dxi-item *ngIf="minMenuSize > 0"
         location="before"
         cssClass="menu-button"
         widget="dxButton"

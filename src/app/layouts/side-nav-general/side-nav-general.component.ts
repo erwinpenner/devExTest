@@ -36,7 +36,7 @@ export class SideNavGeneralComponent implements OnInit {
     this.innerNav = crmNavigation;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menuOpened = this.screen.sizes['screen-large'];
 
     this.router.events.subscribe(val => {
@@ -65,15 +65,15 @@ export class SideNavGeneralComponent implements OnInit {
     e.event.stopPropagation();
   }
 
-  get hideMenuAfterNavigation() {
+  private hideMenuAfterNavigation(): boolean {
     return this.menuMode === 'overlap' || this.temporaryMenuOpened;
   }
 
-  get showMenuAfterClick() {
+  private showMenuAfterClick(): boolean {
     return !this.menuOpened;
   }
 
-  navigationChanged(event) {
+ navigationChanged(event) {
     const path = event.itemData.path;
     const pointerEvent = event.event;
 
@@ -95,7 +95,7 @@ export class SideNavGeneralComponent implements OnInit {
     }
   }
 
-  navigationClick() {
+  navigationClick(): void {
     if (this.showMenuAfterClick) {
       this.temporaryMenuOpened = true;
       this.menuOpened = true;

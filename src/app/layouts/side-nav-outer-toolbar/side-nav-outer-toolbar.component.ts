@@ -19,7 +19,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
   selectedRoute = '';
 
   menuOpened: boolean;
-  temporaryMenuOpened = false;
+  private temporaryMenuOpened = false;
 
   @Input()
   title: string;
@@ -34,7 +34,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     this.appNav = appNavigation;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     // this.menuOpened = this.screen.sizes['screen-large'];
     this.menuOpened = false;
 
@@ -49,7 +49,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     this.updateDrawer();
   }
 
-  updateDrawer() {
+  updateDrawer(): void {
     const isXSmall = this.screen.sizes['screen-x-small'];
     const isLarge = this.screen.sizes['screen-large'];
 
@@ -63,15 +63,15 @@ export class SideNavOuterToolbarComponent implements OnInit {
     this.shaderEnabled = true;
   }
 
-  get hideMenuAfterNavigation() {
+  get hideMenuAfterNavigation(): boolean {
     return this.menuMode === 'overlap' || this.temporaryMenuOpened;
   }
 
-  get showMenuAfterClick() {
+  get showMenuAfterClick(): boolean {
     return !this.menuOpened;
   }
 
-  navigationChanged(event) {
+  navigationChanged(event): void {
     const path = event.itemData.path;
     const pointerEvent = event.event;
 
@@ -93,7 +93,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     }
   }
 
-  navigationClick() {
+  navigationClick(): void {
     if (this.showMenuAfterClick) {
       this.temporaryMenuOpened = true;
       this.menuOpened = true;
