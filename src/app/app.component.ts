@@ -7,6 +7,7 @@ import { AuthService, ScreenService, AppInfoService } from './shared/services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
+  title;
   @HostBinding('class') get getClass() {
     return Object.keys(this.screen.sizes).filter(cl => this.screen.sizes[cl]).join(' ');
   }

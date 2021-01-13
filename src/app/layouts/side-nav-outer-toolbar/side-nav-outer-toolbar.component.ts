@@ -1,5 +1,5 @@
 import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
-import {SideNavigationMenuModule, HeaderModule, FooterModule} from '../../shared/components';
+import { SideNavigationMenuModule, HeaderModule, FooterModule } from '../../shared/components';
 import { ScreenService, AppInfoService } from '../../shared/services';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { appNavigation } from '../../app-navigation';
 
 import {Router, NavigationEnd, RouterModule} from '@angular/router';
-import { SideNavGeneralModule } from '..';
+import { SideNavGeneralModule } from '../side-nav-general/side-nav-general.component';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',

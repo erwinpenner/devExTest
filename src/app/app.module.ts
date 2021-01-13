@@ -5,9 +5,7 @@ import { AppComponent } from './app.component';
 import {
   SideNavOuterToolbarModule,
   SideNavInnerToolbarModule,
-  SingleCardModule,
-  SideNavGeneralComponent,
-  SideNavGeneralModule
+  SingleCardModule
 } from './layouts';
 import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
@@ -23,7 +21,6 @@ import { AppRoutingModule } from './app-routing.module';
     SideNavOuterToolbarModule,
     SideNavInnerToolbarModule,
     SingleCardModule,
-    SideNavGeneralModule,
     FooterModule,
     LoginFormModule,
     UnauthenticatedContentModule,

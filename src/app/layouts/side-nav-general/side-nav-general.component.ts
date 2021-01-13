@@ -1,4 +1,4 @@
-import {Component, OnInit, NgModule, Input, ViewChild, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
 import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
 import { ScreenService } from '../../shared/services';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
@@ -15,10 +15,10 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./side-nav-general.component.scss']
 })
 export class SideNavGeneralComponent implements OnInit {
-  @ViewChild(DxScrollViewComponent, { static: true }) scrollView: DxScrollViewComponent | undefined;
+  @ViewChild(DxScrollViewComponent, { static: true }) scrollView: DxScrollViewComponent;
   selectedRoute = '';
 
-  menuOpened: boolean | undefined;
+  menuOpened: boolean;
   temporaryMenuOpened = false;
 
   @Input()
