@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { appNavigation } from '../../app-navigation';
 
 import { Router, NavigationEnd } from '@angular/router';
-import {SideNavGeneralModule} from '../side-nav-general/side-nav-general.component';
+import { SideNavGeneralModule } from '..';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',

@@ -1,13 +1,13 @@
-import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
+import {Component, OnInit, NgModule, Input, ViewChild, Output, EventEmitter} from '@angular/core';
 import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
 import { ScreenService } from '../../shared/services';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
+import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { CommonModule } from '@angular/common';
 import { crmNavigation } from '../../app-navigation';
 
 import { Router, NavigationEnd } from '@angular/router';
-import {DxToolbarModule} from 'devextreme-angular';
 
 @Component({
   selector: 'app-side-nav-general',
@@ -15,14 +15,14 @@ import {DxToolbarModule} from 'devextreme-angular';
   styleUrls: ['./side-nav-general.component.scss']
 })
 export class SideNavGeneralComponent implements OnInit {
-  @ViewChild(DxScrollViewComponent, {static: true}) scrollView: DxScrollViewComponent;
+  @ViewChild(DxScrollViewComponent, { static: true }) scrollView: DxScrollViewComponent | undefined;
   selectedRoute = '';
 
-  menuOpened: boolean;
+  menuOpened: boolean | undefined;
   temporaryMenuOpened = false;
 
   @Input()
-  title: string;
+  title: string | undefined;
 
   currentApp = 'CRM';
   menuMode = 'shrink';
@@ -66,7 +66,7 @@ export class SideNavGeneralComponent implements OnInit {
   }
 
   get hideMenuAfterNavigation() {
-    return this.menuMode === 'shrink' || this.temporaryMenuOpened;
+    return this.menuMode === 'overlap' || this.temporaryMenuOpened;
   }
 
   get showMenuAfterClick() {
@@ -104,7 +104,7 @@ export class SideNavGeneralComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule, DxToolbarModule],
+  imports: [ SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxToolbarModule, DxScrollViewModule, CommonModule ],
   exports: [ SideNavGeneralComponent ],
   declarations: [ SideNavGeneralComponent ]
 })
