@@ -27,7 +27,14 @@
     (openMenu)="navigationClick()">
   </app-side-navigation-menu>
 
-  <app-side-nav-general></app-side-nav-general>
+  <app-side-nav-general>
+    <router-outlet></router-outlet>
+    <app-footer>
+      Copyright © 2011-{{appInfo.currentYear}} {{appInfo.companyName}}
+      <br/>
+      All trademarks or registered trademarks are property of their respective owners.
+    </app-footer>
+  </app-side-nav-general>
 
 <!--  <dx-scroll-view class="with-footer">-->
 <!--    <div class="content">-->

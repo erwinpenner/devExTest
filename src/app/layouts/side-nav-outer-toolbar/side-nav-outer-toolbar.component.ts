@@ -1,12 +1,12 @@
 import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
-import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
-import { ScreenService } from '../../shared/services';
+import {SideNavigationMenuModule, HeaderModule, FooterModule} from '../../shared/components';
+import { ScreenService, AppInfoService } from '../../shared/services';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 import { CommonModule } from '@angular/common';
 import { appNavigation } from '../../app-navigation';
 
-import { Router, NavigationEnd } from '@angular/router';
+import {Router, NavigationEnd, RouterModule} from '@angular/router';
 import { SideNavGeneralModule } from '..';
 
 @Component({
@@ -30,7 +30,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
   shaderEnabled = false;
   appNav;
 
-  constructor(private screen: ScreenService, private router: Router) {
+  constructor(private screen: ScreenService, private router: Router, public appInfo: AppInfoService) {
     this.appNav = appNavigation;
   }
 
@@ -102,7 +102,8 @@ export class SideNavOuterToolbarComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule, SideNavGeneralModule],
+  imports: [SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule,
+    SideNavGeneralModule, RouterModule, FooterModule],
   exports: [ SideNavOuterToolbarComponent ],
   declarations: [ SideNavOuterToolbarComponent ]
 })
