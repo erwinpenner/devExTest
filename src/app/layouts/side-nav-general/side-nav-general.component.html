@@ -18,7 +18,9 @@
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
     (openMenu)="navigationClick()">
-    <dx-toolbar id="navigation-header2">
+    <dx-toolbar
+      id="navigation-header2"
+      *ngIf="isLarge">
       <dxi-item
         *ngIf="minMenuSize !== 0"
         location="before"
@@ -27,7 +29,7 @@
         [options]="{
             icon: 'menu',
             stylingMode: 'text',
-            onClick: toggleMenu
+            onClick: toggleMenuInner
           }">
       </dxi-item>
       <dxi-item

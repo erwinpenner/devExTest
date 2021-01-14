@@ -8,7 +8,7 @@ import { appNavigation } from '../../app-navigation';
 
 import {Router, NavigationEnd, RouterModule} from '@angular/router';
 import { SideNavGeneralModule } from '../side-nav-general/side-nav-general.component';
-import {DxToolbarModule} from "devextreme-angular";
+import {DxToolbarModule} from 'devextreme-angular';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',

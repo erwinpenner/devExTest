@@ -1709,16 +1709,16 @@
   font-family: "dx.material.orange-dark";
 }
 .dx-swatch-additional .dx-theme-accent-as-text-color {
-  color: #ff5722 !important;
+  color: #ff5722!important;
 }
 .dx-swatch-additional .dx-theme-text-color {
-  color: #ffffff !important;
+  color: #fff!important;
 }
 .dx-swatch-additional .dx-theme-background-color-as-text-color {
   color: #363640!important;
 }
 .dx-swatch-additional .dx-theme-border-color-as-text-color {
-  color: #515159 !important;
+  color: #515159!important;
 }
 .dx-swatch-additional .dx-theme-accent-as-background-color {
   background-color: #ff5722!important;

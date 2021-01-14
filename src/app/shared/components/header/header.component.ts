@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   title: string;
 
   appButtonPosition = 'before';
+  appIsLarge = true;
 
   user = { email: '' };
 
@@ -57,6 +58,7 @@ export class HeaderComponent implements OnInit {
     const isLarge = this.screen.sizes['screen-large'];
 
     this.appButtonPosition = isLarge ? 'before' : 'after';
+    this.appIsLarge = isLarge;
   }
 
   toggleMenu = () => {

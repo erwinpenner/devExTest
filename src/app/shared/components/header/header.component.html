@@ -1,6 +1,16 @@
 <header>
   <dx-toolbar class="header-toolbar">
     <dxi-item
+      *ngIf="menuToggleEnabled && !appIsLarge"
+      location="'before'"
+      widget="dxButton"
+      cssClass="menu-button"
+      [options]="{
+        icon: 'menu',
+        stylingMode: 'text'
+      }">
+    </dxi-item>
+    <dxi-item
       *ngIf="menuToggleEnabled"
       [location]="appButtonPosition"
       widget="dxButton"
@@ -22,24 +32,24 @@
       widget="dxResizable">
       <img id="logo" src="../../../../assets/BSM_logo_claim.svg" alt="BSM-Logo" width="80" style="margin-left: 13px"/>
     </dxi-item>
-<!--    <dxi-item-->
-<!--      location="after"-->
-<!--      locateInMenu="auto"-->
-<!--      menuItemTemplate="menuItem">-->
-<!--      <div *dxTemplate="let data of 'item'">-->
-<!--        <dx-button-->
-<!--          class="user-button authorization"-->
-<!--          width="210px"-->
-<!--          height="100%"-->
-<!--          stylingMode="text">-->
-<!--          <div *dxTemplate="let data of 'content'">-->
-<!--            <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="context"></app-user-panel>-->
-<!--          </div>-->
-<!--        </dx-button>-->
-<!--      </div>-->
-<!--    </dxi-item>-->
-<!--    <div *dxTemplate="let data of 'menuItem'">-->
-<!--      <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="list"></app-user-panel>-->
-<!--    </div>-->
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      menuItemTemplate="menuItem">
+      <div *dxTemplate="let data of 'item'">
+        <dx-button
+          class="user-button authorization"
+          width="210px"
+          height="100%"
+          stylingMode="text">
+          <div *dxTemplate="let data of 'content'">
+            <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="context"></app-user-panel>
+          </div>
+        </dx-button>
+      </div>
+    </dxi-item>
+    <div *dxTemplate="let data of 'menuItem'">
+      <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="list"></app-user-panel>
+    </div>
   </dx-toolbar>
 </header>
