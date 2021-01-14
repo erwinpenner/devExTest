@@ -29,6 +29,7 @@ export class SideNavGeneralComponent implements OnInit {
   menuRevealMode = 'expand';
   minMenuSize = 0;
   shaderEnabled = false;
+  isLarge = false;
   innerNav;
 
   constructor(private screen: ScreenService, private router: Router) {
@@ -58,9 +59,10 @@ export class SideNavGeneralComponent implements OnInit {
     this.menuRevealMode = isXSmall ? 'slide' : 'expand';
     this.minMenuSize = isXSmall ? 0 : 60;
     this.shaderEnabled = !isLarge;
+    this.isLarge = isLarge;
   }
 
-  toggleMenu = (e) => {
+  public toggleMenuInner = (e) => {
     this.menuOpened = !this.menuOpened;
     e.event.stopPropagation();
   }
