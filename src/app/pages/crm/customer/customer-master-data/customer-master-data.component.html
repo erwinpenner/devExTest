@@ -1,0 +1,92 @@
+<h2 class="content-block">Kundenstamm</h2>
+
+<div class="content-block">
+
+  <dx-toolbar id="master-data-buttons">
+    <dxi-item
+      location="before"
+      cssClass="menu-button"
+      widget="dxButton"
+      [options]="{
+        icon: 'plus',
+        stylingMode: 'text',
+        type: 'success'
+      }"></dxi-item>
+    <dxi-item
+      location="after"
+      cssClass="menu-button"
+      widget="dxButton"
+      [options]="{
+        icon: 'refresh',
+        stylingMode: 'text',
+        onClick: refreshTreeList,
+        type: 'normal'
+      }"></dxi-item>
+    <dxi-item
+      location="after"
+      cssClass="menu-button"
+      widget="dxButton"
+      [options]="{
+        icon: 'trash',
+        stylingMode: 'text',
+        onClick: clearFilterRow,
+        type: 'normal'
+      }"></dxi-item>
+  </dx-toolbar>
+
+  <div class="dx-card responsive-paddings">
+
+    <dx-tree-list
+      #treeListId
+      [dataSource]="dataSourceTree"
+      keyExpr="id"
+      [showBorders]="false"
+      [focusedRowEnabled]="true"
+      [focusedRowIndex]="0"
+      [hoverStateEnabled]="true"
+      [columnAutoWidth]="true"
+      [columnHidingEnabled]="true">
+
+      <dxo-scrolling mode="standard"></dxo-scrolling>
+      <dxo-paging [enabled]="true" [pageSize]="10"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+      <dxi-column
+        dataField="customer_number"
+        caption="Kundennummer"
+        [minWidth]="140"
+        [hidingPriority]="3">
+      </dxi-column>
+      <dxi-column
+       dataField="customer_name"
+       caption="Name"
+       [hidingPriority]="4">
+      </dxi-column>
+      <dxi-column
+        dataField="customer_address"
+        caption="Adresse"
+        [hidingPriority]="1">
+      </dxi-column>
+      <dxi-column
+        dataField="customer_phone"
+        caption="Telefon"
+        [width]="160"
+        [allowSorting]="false"
+        [hidingPriority]="0">
+      </dxi-column>
+      <dxi-column
+        dataField="customer_status"
+        caption="Status"
+        [width]="120"
+        [hidingPriority]="2">
+        <dxo-lookup
+          [dataSource]="statusMap"
+          valueExpr="value"
+          displayExpr="name">
+        </dxo-lookup>
+      </dxi-column>
+
+    </dx-tree-list>
+  </div>
+</div>

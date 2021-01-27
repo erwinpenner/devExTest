@@ -23,7 +23,7 @@ export const crmNavigation = [
     items: [
       {
         text: 'Kundenstamm',
-        path: '/kunden/kundenstamm'
+        path: '/customer/masterdata'
       },
       {
         text: 'Neuer Kunde',

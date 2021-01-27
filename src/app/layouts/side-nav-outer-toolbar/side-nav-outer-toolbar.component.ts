@@ -17,6 +17,7 @@ import {DxToolbarModule} from 'devextreme-angular';
 })
 export class SideNavOuterToolbarComponent implements OnInit {
   @ViewChild(DxScrollViewComponent, { static: true }) scrollView: DxScrollViewComponent;
+
   selectedRoute = '';
 
   menuOpened: boolean;
@@ -108,8 +109,15 @@ export class SideNavOuterToolbarComponent implements OnInit {
 }
 
 @NgModule({
-  imports: [SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule,
-    SideNavGeneralModule, RouterModule, FooterModule, DxToolbarModule],
+  imports: [SideNavigationMenuModule,
+    DxDrawerModule,
+    HeaderModule,
+    DxScrollViewModule,
+    CommonModule,
+    SideNavGeneralModule,
+    RouterModule,
+    FooterModule,
+    DxToolbarModule],
   exports: [ SideNavOuterToolbarComponent ],
   declarations: [ SideNavOuterToolbarComponent ]
 })
