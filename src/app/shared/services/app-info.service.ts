@@ -5,11 +5,11 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return 'BSM GmbH';
+    return 'Test';
   }
 
   public get companyName() {
-    return 'BSM GmbH';
+    return 'CompanyName';
   }
 
   public get subAppTitle() {
